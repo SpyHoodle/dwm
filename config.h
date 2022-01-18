@@ -71,7 +71,7 @@ static Key keys[] = {
 	/* modifier                     key                       function        argument */
 	{ MODKEY,                       XK_z,                     spawn,          SHCMD("boomer") },
 	{ MODKEY,                       XK_x,                     spawn,          SHCMD("xkill") },
-	{ MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD("slock") },
+	{ MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD("bosskey") },
   { MODKEY|ShiftMask,             XK_s,                     spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|Mod1Mask,              XK_c,                     spawn,          SHCMD("st cava") },
 	{ MODKEY|Mod1Mask,              XK_h,                     spawn,          SHCMD("st htop") },
