@@ -30,15 +30,11 @@ Clone the git repository
 ```sh
 git clone https://github.com/SpyHoodle/perfectwm
 ```
-Change directory to perfectdwm
+Change directory to perfectwm
 ```sh
 cd perfectwm
 ```
 Make and install perfectwm
 ```sh
 make install
-```
-Start "dwm" at the bottom of your .xinitrc
-```
-exec dwm
 ```
