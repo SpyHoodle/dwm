@@ -1,6 +1,8 @@
 # perfectwm
 My perfect build of suckless's dynamic window manager.
 
+![perfectwm screenshot](https://file.coffee/u/k9Leny_pPXFimv.png)
+
 # patches
 - dwm-alwayscenter-20200625-f04cac6.diff
 - dwm-fancybar-20200423-ed3ab6b.diff
