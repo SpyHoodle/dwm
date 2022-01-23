@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 
 /* dwm commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-b", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray, "-nf", col_fgwhite, "-sb", col_main, "-sf", col_fgwhite, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-b", "-p", "Run:", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 /* for volume keybinds */
@@ -71,7 +71,10 @@ static Key keys[] = {
 	/* modifier                     key                       function        argument */
 	{ MODKEY,                       XK_z,                     spawn,          SHCMD("boomer") },
 	{ MODKEY,                       XK_x,                     spawn,          SHCMD("xkill") },
+	{ MODKEY,                       XK_c,                     spawn,          SHCMD("gcolor2") },
+	{ MODKEY,                       XK_p,                     spawn,          SHCMD("plumb $(xsel)") },
 	{ MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD("bosskey") },
+	{ MODKEY|ShiftMask,             XK_x,                     spawn,          SHCMD("powermenu") },
   { MODKEY|ShiftMask,             XK_s,                     spawn,          SHCMD("flameshot gui") },
 	{ MODKEY|Mod1Mask,              XK_c,                     spawn,          SHCMD("st cava") },
 	{ MODKEY|Mod1Mask,              XK_h,                     spawn,          SHCMD("st htop") },
@@ -122,6 +125,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                                     7)
 	TAGKEYS(                        XK_9,                                     8)
 	{ MODKEY|ShiftMask,             XK_e,                     quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_r,                     quit,           {1} },
 };
 
 /* button definitions */
