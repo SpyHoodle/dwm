@@ -8,6 +8,7 @@ My perfect build of suckless's dynamic window manager.
 - dwm-fancybar-20200423-ed3ab6b.diff
 - dwm-movestack-20211115-a786211.diff
 - dwm-pertag-20200914-61bb8b2.diff
+- dwm-restartsig-20180523-6.2.diff
 - dwm-statusallmons-6.2.diff
 - dwm-sticky-6.1.diff
 - dwm-stickyindicator-fancybarfix-6.2.diff
@@ -19,9 +20,12 @@ Some keybinds require external programs, such as:
 - `F8` - **pulsemixer** (tui sound mixer)
 - `media keys` - **pamixer** (volume), **playerctl** (control)
 - `modkey + z` - **boomer** (zooming program)
+- `modkey + c` - **gcolor2** (color picker)
+- `modkey + p` - **plumber** (my plumbing script)
 - `modkey + x` - **xkill** (kill x programs on click)
 - `modkey + Shift + s` - **flameshot** (screenshotting)
-- `modkey + Shift + l` - **slock** (screen locking)
+- `modkey + Shift + l` - **bosskey** (screen locking)
+- `modkey + Shift + x` - **powermenu** (shutdown, reboot, etc.)
 
 # installation
 **Note:** Install any extra programs needed for special keybinds (see above.)
