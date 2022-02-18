@@ -2,20 +2,18 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 10;        /* gaps between windows */
+static const unsigned int gappx     = 10;       /* gaps between windows */
 static const unsigned int snap      = 0;        /* snap pixel */
+static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Iosevka:pixelsize=14:antialias=true:autohint=true", "-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"};
-static const char dmenufont[]       = "Iosevka:pixelsize=14:antialias=true:autohint=true";
-static const char col_gray[]        = "#121317";
-static const char col_fgwhite[]     = "#D6DEEB";
-static const char col_main[]        = "#313439";
-static const char *colors[][3]      = {
-        /*               fg           bg         border   */
-        [SchemeNorm] = { col_fgwhite, col_gray,  col_gray },
-        [SchemeSel]  = { col_fgwhite, col_main,  col_main },
+static const char *fonts[]          = { "Iosevka:pixelsize=14:antialias=true:autohint=true",
+                                        "JoyPixels:pixelsize=14:antialias=true:autohint=true",
+                                        "Font Awesome 6 Free Solid:pixelsize=14:antialias=true:autohint=true",
+                                        "Font Awesome 6 Brands:pixelsize=14:antialias=true:autohint=true",
 };
+static const char dmenufont[]       = "Iosevka:pixelsize=14:antialias=true:autohint=true";
+#include "/home/spy/cols/dwm.h"
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
 static const XPoint stickyiconbb    = {4,8};  /* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
@@ -27,8 +25,9 @@ static const Rule rules[] = {
   ¦*  WM_CLASS(STRING) = instance, class
   ¦*  WM_NAME(STRING) = title
   ¦*/
-  /* class      instance    title            tags mask     isfloating   monitor */
-  { "St",       "st",       "pulsemixer",    0,            1,           -1 },
+  /* class           instance  title            tags mask     isfloating  isterminal  noswallow   monitor */
+	{ "st-256color",   NULL,     NULL,            0,            0,          1,          0,          -1 },
+  { "st-256color",   "st",     "pulsemixer",    0,            1,          1,          0,          -1 },
 };
 
 
@@ -75,16 +74,11 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,                     spawn,          SHCMD("plumb $(xsel)") },
 	{ MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD("bosskey") },
 	{ MODKEY|ShiftMask,             XK_x,                     spawn,          SHCMD("powermenu") },
-  { MODKEY|ShiftMask,             XK_s,                     spawn,          SHCMD("flameshot gui") },
-	{ MODKEY|Mod1Mask,              XK_c,                     spawn,          SHCMD("st cava") },
-	{ MODKEY|Mod1Mask,              XK_h,                     spawn,          SHCMD("st htop") },
-	{ MODKEY|Mod1Mask,              XK_g,                     spawn,          SHCMD("st gotop") },
-	{ MODKEY|Mod1Mask,              XK_m,                     spawn,          SHCMD("st ncmpcpp") },
-	{ MODKEY|Mod1Mask,              XK_w,                     spawn,          SHCMD("st -e sh -c 'weather; exec zsh'") },
-	{ MODKEY|Mod1Mask,              XK_n,                     spawn,          SHCMD("st -e sh -c 'neofetch; exec zsh'") },
-  { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pamixer --allow-boost -d 5; kill -39 $(pidof dwmblocks)") },
-  { 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pamixer -t; kill -39 $(pidof dwmblocks)")},
-  { 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pamixer --allow-boost -i 5; kill -39 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,             XK_m,                     spawn,          SHCMD("dmenu-mount") },
+  { MODKEY|ShiftMask,             XK_s,                     spawn,          SHCMD("maim --select | xclip -selection clipboard -t image/png") },
+  { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pamixer --allow-boost -d 5; kill -35 $(pidof dwmblocks)") },
+  { 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pamixer -t; kill -35 $(pidof dwmblocks)")},
+  { 0,                            XF86XK_AudioRaiseVolume,  spawn,          SHCMD("pamixer --allow-boost -i 5; kill -35 $(pidof dwmblocks)") },
   { 0,                            XF86XK_AudioPlay,         spawn,          SHCMD("playerctl play-pause") },
   { 0,                            XF86XK_AudioNext,         spawn,          SHCMD("playerctl next") },
   { 0,                            XF86XK_AudioPrev,         spawn,          SHCMD("playerctl previous") },
