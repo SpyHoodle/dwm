@@ -46,3 +46,6 @@ Make and install perfectwm
 ```sh
 make install
 ```
+**Final step:** Add a colourscheme to `~/cols/dwm.h`. This is where perfectwm will read a colorscheme.<br>
+This should be in the usual form dwm would have a colourscheme in it's own source code, as `dwm.h` is included at compile time.<br>
+Alternatively, you could change the location of the colourscheme in `config.h`.
