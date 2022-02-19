@@ -22,12 +22,12 @@ My perfect build of suckless's dynamic window manager.
 # programs
 Some keybinds require external programs, such as:
 - `F8` - **pulsemixer** (tui sound mixer)
-- `media keys` - **pamixer** (volume), **playerctl** (control)
+- `media keys` - **pamixer** (volume) & **playerctl** (control)
 - `modkey + z` - **boomer** (zooming program)
 - `modkey + c` - **gcolor2** (color picker)
 - `modkey + p` - **plumber** (my plumbing script)
 - `modkey + x` - **xkill** (kill x programs on click)
-- `modkey + Shift + s` - **maim** (screenshotting)
+- `modkey + Shift + s` - **sswm** whcih uses **maim** (screenshotting)
 - `modkey + Shift + l` - **bosskey** (screen locking)
 - `modkey + Shift + x` - **powermenu** (shutdown, reboot, etc.)
 
