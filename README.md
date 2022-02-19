@@ -27,7 +27,7 @@ Some keybinds require external programs, such as:
 - `modkey + c` - **gcolor2** (color picker)
 - `modkey + p` - **plumber** (my plumbing script)
 - `modkey + x` - **xkill** (kill x programs on click)
-- `modkey + Shift + s` - **sswm** whcih uses **maim** (screenshotting)
+- `modkey + Shift + s` - **sswm** which uses **maim** (screenshotting)
 - `modkey + Shift + l` - **bosskey** (screen locking)
 - `modkey + Shift + x` - **powermenu** (shutdown, reboot, etc.)
 
