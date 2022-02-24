@@ -13,7 +13,10 @@ static const char *fonts[]          = { "Iosevka:pixelsize=14:antialias=true:aut
                                         "Font Awesome 6 Brands:pixelsize=14:antialias=true:autohint=true",
 };
 static const char dmenufont[]       = "Iosevka:pixelsize=14:antialias=true:autohint=true";
-#include "/home/spy/col/dwm.h"
+
+/* colours from cols */
+#include "/home/spy/.config/cols/dwm.h"
+
 static const XPoint stickyicon[]    = { {0,0}, {4,0}, {4,8}, {2,6}, {0,8}, {0,0} }; /* represents the icon as an array of vertices */
 static const XPoint stickyiconbb    = {4,8};  /* defines the bottom right corner of the polygon's bounding box (speeds up scaling) */
 
@@ -75,7 +78,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_a,                     spawn,          SHCMD("st python ~/dev/pyagenda/main.py") },
 	{ MODKEY|ShiftMask,             XK_l,                     spawn,          SHCMD("bosskey -lu") },
 	{ MODKEY|ShiftMask,             XK_x,                     spawn,          SHCMD("powermenu") },
-	{ MODKEY|ShiftMask,             XK_m,                     spawn,          SHCMD("dmenu-mount") },
+	{ MODKEY|ShiftMask,             XK_m,                     spawn,          SHCMD("dmount") },
   { MODKEY|ShiftMask,             XK_s,                     spawn,          SHCMD("sswm -c") },
   { 0,                            XF86XK_AudioLowerVolume,  spawn,          SHCMD("pamixer --allow-boost -d 5; kill -35 $(pidof dwmblocks)") },
   { 0,                            XF86XK_AudioMute,         spawn,          SHCMD("pamixer -t; kill -35 $(pidof dwmblocks)")},
