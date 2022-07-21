@@ -602,9 +602,7 @@ cleanup(void)
 void
 cleanupmon(Monitor *mon)
 {
-	Monitor *m, *mon;
-	unsigned int mi, j;
-	const MonitorRule *mr;
+	Monitor *m;
 
 	if (mon == mons)
 		mons = mons->next;
@@ -738,8 +736,9 @@ configurerequest(XEvent *e)
 Monitor *
 createmon(void)
 {
-	Monitor *m;
-	unsigned int i;
+	Monitor *m, *mon;
+	unsigned int i, mi, j;
+  const MonitorRule *mr;
 
 	m = ecalloc(1, sizeof(Monitor));
 	m->tagset[0] = m->tagset[1] = 1;
